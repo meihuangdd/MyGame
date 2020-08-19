@@ -19,56 +19,5 @@ android {
 }
 
 dependencies {
-    api fileTree(include: ['*.jar'], dir: 'libs')
-    //support
-    api deps.support.support_v4
-    api deps.support.appcompat_v7
-    api deps.support.recyclerview_v7
-    //rxjava
-    api deps.rxjava
-    api deps.rxandroid
-    //rx管理View的生命周期
-    api(deps.rxlifecycle) {
-        exclude group: 'com.android.support'
-    }
-    api(deps.rxlifecycle_components) {
-        exclude group: 'com.android.support'
-    }
-    //rxbinding
-    api(deps.rxbinding) {
-        exclude group: 'com.android.support'
-    }
-    //rx权限请求
-    api(deps.rxpermissions) {
-        exclude group: 'com.android.support'
-    }
-    //network
-    api deps.okhttp
-    api deps.retrofit
-    api deps.converter_gson
-    api deps.adapter_rxjava
-    //json解析
-    api deps.gson
-    //material-dialogs
-    api(deps.material_dialogs_core) {
-        exclude group: 'com.android.support'
-    }
-    api(deps.material_dialogs_commons) {
-        exclude group: 'com.android.support'
-    }
-    //glide图片加载库
-    api (deps.glide){
-        exclude group: 'com.android.support'
-    }
-    annotationProcessor deps.glide_compiler
-    //recyclerview的databinding套装
-    api(deps.bindingcollectionadapter) {
-        exclude group: 'com.android.support'
-    }
-    api(deps.bindingcollectionadapter_recyclerview) {
-        exclude group: 'com.android.support'
-    }
-    //Google LiveData和ViewModel组件
-    api deps.lifecycle_extensions
-    annotationProcessor deps.lifecycle_compiler
+    api project(':lib_res')
 }
