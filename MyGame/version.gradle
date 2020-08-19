@@ -1,0 +1,95 @@
+def versions = [:]//所有依赖版本号集合
+versions.appcompat = "1.2.0"
+versions.cons_layout = "1.1.2"
+versions.support_version = "28.0.0"
+versions.junit = "4.12"
+versions.MVVMHabit = "3.1.6"
+versions.rxjava = "2.2.3"
+versions.rxandroid = "2.1.0"
+versions.rxlifecycle = "2.2.2"
+versions.rxlifecycle_components = "2.2.2"
+versions.rxbinding = "2.1.1"
+versions.rxpermissions = "0.10.2"
+versions.okhttp = "3.10.0"
+versions.retrofit = "2.4.0"
+versions.converter_gson = "2.4.0"
+versions.adapter_rxjava = "2.4.0"
+versions.gson = "2.8.5"
+versions.material_dialogs_core = "0.9.4.5"
+versions.material_dialogs_commons = "0.9.4.5"
+versions.glide = "4.8.0"
+versions.glide_compiler = "4.8.0"
+versions.bindingcollectionadapter = "2.2.0"
+versions.bindingcollectionadapter_recyclerview = "2.2.0"
+versions.lifecycle_extensions = "1.1.1"
+versions.lifecycle_compiler = "1.1.1"
+versions.annotations = "15.0"
+versions.tkrefreshlayout = "1.0.7"
+versions.pager_bottom_tab_strip = "2.2.5"
+versions.leakcanary_android = "1.6.2"
+versions.leakcanary_support_fragment = "1.6.2"
+
+
+
+def build_versions = [:]//版本信息集合
+build_versions.applicationId = "com.my.game.app"
+build_versions.min_sdk = 15
+build_versions.target_sdk = 28
+build_versions.version_code = 10000
+build_versions.version_name = "1.0.0"
+ext.build_versions = build_versions
+
+
+def deps =[:]//依赖集合
+deps.MVVMHabit = "com.github.goldze:MVVMHabit:$versions.MVVMHabit"
+//rxjava
+deps.rxjava = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+//rx系列与View生命周期同步
+deps.rxlifecycle = "com.trello.rxlifecycle2:rxlifecycle:$versions.rxlifecycle"
+deps.rxlifecycle_components = "com.trello.rxlifecycle2:rxlifecycle-components:$versions.rxlifecycle_components"
+deps.rxbinding = "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding"
+//rx 6.0权限请求
+deps.rxpermissions = "com.github.tbruyelle:rxpermissions:$versions.rxpermissions"
+//network
+deps.okhttp = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+deps.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+deps.converter_gson = "com.squareup.retrofit2:converter-gson:$versions.converter_gson"
+deps.adapter_rxjava = "com.squareup.retrofit2:adapter-rxjava2:$versions.adapter_rxjava"
+//json解析
+deps.gson = "com.google.code.gson:gson:$versions.gson"
+//material-dialogs
+deps.material_dialogs_core = "com.afollestad.material-dialogs:core:$versions.material_dialogs_core"
+deps.material_dialogs_commons = "com.afollestad.material-dialogs:commons:$versions.material_dialogs_commons"
+//glide图片加载
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+deps.glide_compiler = "com.github.bumptech.glide:compiler:$versions.glide_compiler"
+//recyclerview的databinding套装
+deps.bindingcollectionadapter = "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:$versions.bindingcollectionadapter"
+deps.bindingcollectionadapter_recyclerview = "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:$versions.bindingcollectionadapter_recyclerview"
+//Google AAC
+deps.lifecycle_extensions = "android.arch.lifecycle:extensions:$versions.lifecycle_extensions"
+deps.lifecycle_compiler = "android.arch.lifecycle:compiler:$versions.lifecycle_compiler"
+deps.annotations = "org.jetbrains:annotations-java5:$versions.annotations"
+deps.tkrefreshlayout = "com.lcodecorex:tkrefreshlayout:$versions.tkrefreshlayout"
+deps.pager_bottom_tab_strip = "me.majiajie:pager-bottom-tab-strip:$versions.pager_bottom_tab_strip"
+
+
+def support = [:]// android support 相关库依赖
+support.cons_layout = "com.android.support.constraint:constraint-layout:$versions.cons_layout"
+support.support_v4 = "com.android.support:support-v4:$versions.support_version"
+support.appcompat_v7 = "com.android.support:appcompat-v7:$versions.support_version"
+support.recyclerview_v7 = "com.android.support:recyclerview-v7:$versions.support_version"
+support.design = "com.android.support:design:$versions.support_version"
+deps.support = support
+
+
+
+def atsl = [:]// 测试相关依赖
+atsl.junit = "junit:junit:$versions.junit"
+atsl.leakcanary_android = "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary_android"
+atsl.leakcanary_support_fragment = "com.squareup.leakcanary:leakcanary-support-fragment:$versions.leakcanary_support_fragment"
+deps.atsl = atsl
+
+ext.deps = deps
+
