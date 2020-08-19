@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 
 import me.tatarka.bindingcollectionadapter2.ItemBinding;
 
-import static me.goldze.mvvmhabit.R.attr.itemView;
-
 /**
  * Created by goldze on 2017/6/18.
  */

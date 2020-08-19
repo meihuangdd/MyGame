@@ -4,7 +4,7 @@
     <data>
         <variable
             name="testModel"
-            type="com.goldze.mvvmhabit.ui.test.TestViewModel" />
+            type="com.goldze.mvvmhabit.model.test.TestViewModel" />
     </data>
 
     <LinearLayout
@@ -12,9 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:text="测试"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <Button
+            android:text="@string/mvvm_network"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:onClick="@{testModel.netWorkClick}"
+            />
+        <View style="@style/Line"/>
+
     </LinearLayout>
 </layout>

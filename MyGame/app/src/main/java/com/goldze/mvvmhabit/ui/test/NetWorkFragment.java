@@ -7,20 +7,19 @@ import android.view.ViewGroup;
 
 import com.goldze.mvvmhabit.BR;
 import com.goldze.mvvmhabit.R;
-import com.goldze.mvvmhabit.databinding.FragmentTestBinding;
-import com.goldze.mvvmhabit.model.test.TestViewModel;
+import com.goldze.mvvmhabit.databinding.FragmentNetworkBinding;
+import com.goldze.mvvmhabit.model.test.NetworkViewModel;
 
 import me.goldze.mvvmhabit.base.BaseFragment;
 
-public class TestFragment extends BaseFragment<FragmentTestBinding, TestViewModel> {
-
+public class NetWorkFragment extends BaseFragment<FragmentNetworkBinding, NetworkViewModel> {
     @Override
     public int initContentView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return R.layout.fragment_test;
+        return R.layout.fragment_network;
     }
 
     @Override
     public int initVariableId() {
-        return BR.testModel;
+        return BR.networkModel;
     }
 }
