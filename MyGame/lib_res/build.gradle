@@ -83,5 +83,8 @@ dependencies {
     api(deps.pager_bottom_tab_strip) {
         exclude group: 'com.android.support'
     }
+    api deps.BRAVH
+    api deps.refresh
+    api deps.glide
 
 }

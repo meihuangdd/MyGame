@@ -11,5 +11,6 @@
     <string name="customactivityoncrash_error_activity_error_details_clipboard_label">错误信息</string>
 
     <string name="mvvm_test">MVVM框架测试</string>
+    <string name="mvvm_snake">贪吃蛇</string>
     <string name="mvvm_network">测试网络请求</string>
 </resources>

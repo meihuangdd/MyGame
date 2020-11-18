@@ -36,25 +36,13 @@ public class NetWorkViewModel extends BaseViewModel<DemoRepository> {
         super(application,repository);
     }
     //给RecyclerView添加ObservableList
-    public ObservableList<NetWorkItemViewModel> obserableList = new ObservableArrayList<>();
-
-    //给RecyclerView添加ItemBinding
-    public ItemBinding<NetWorkItemViewModel> itemBinding = ItemBinding.of(BR.networkModel, R.layout.item_network);
-    //下拉刷新
-    public BindingCommand onRefreshCommand = new BindingCommand(new BindingAction() {
-        @Override
-        public void call() {
-            ToastUtils.showShort("下拉刷新");
-            requestNetWork();
-        }
-    });
-
+    public ObservableList<DemoEntity.ItemsEntity> obserableList = new ObservableArrayList<>();
     /**
      * 网络请求方法，在ViewModel中调用Model层，通过Okhttp+Retrofit+RxJava发起请求
      */
     public void requestNetWork(){
         //可以调用addSubscribe()添加Disposable，请求与View周期同步
-        model.demoGet()
+        model.demoPost("1")
                 .compose(RxUtils.schedulersTransformer())//线程调度
                 .compose(RxUtils.exceptionTransformer())//网络错误的异常转换，这里可以转换成自己的ExceptionHandle
                 .doOnSubscribe(this)//请求ViewModel周期同步
@@ -73,9 +61,8 @@ public class NetWorkViewModel extends BaseViewModel<DemoRepository> {
                         //请求成功
                         if(response.getCode() == 1){
                             for(DemoEntity.ItemsEntity entity :response.getResult().getItems()){
-                                NetWorkItemViewModel itemViewModel = new NetWorkItemViewModel(NetWorkViewModel.this,entity);
                                 //双向绑定动态添加Item
-                                obserableList.add(itemViewModel);
+                                obserableList.add(entity);
                             }
                         }else{
                             //code错误时也可以定义Observable回调到View层去处理
@@ -102,11 +89,5 @@ public class NetWorkViewModel extends BaseViewModel<DemoRepository> {
                         uc.finishRefreshing.call();
                     }
                 });
-    }
-    /**
-     * 获取条目下标
-     */
-    public int getItemPosition(NetWorkItemViewModel netWorkItemViewModel){
-        return obserableList.indexOf(netWorkItemViewModel);
     }
 }

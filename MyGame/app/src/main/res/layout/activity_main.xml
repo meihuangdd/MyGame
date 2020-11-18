@@ -18,6 +18,14 @@
             android:onClick="@{mainModel.test}"
             />
         <View style="@style/Line"/>
+        <Button
+            android:text="@string/mvvm_snake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:onClick="@{mainModel.snake}"
+            />
+        <View style="@style/Line"/>
 
     </LinearLayout>
 </layout>

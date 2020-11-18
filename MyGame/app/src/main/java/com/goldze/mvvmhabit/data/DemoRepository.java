@@ -32,4 +32,9 @@ public class DemoRepository extends BaseModel implements HttpDataSource {
     public Observable<BaseResponse<DemoEntity>> demoGet() {
         return mHttpDataSource.demoGet();
     }
+
+    @Override
+    public Observable<BaseResponse<DemoEntity>> demoPost(String catalog) {
+        return mHttpDataSource.demoPost(catalog);
+    }
 }
